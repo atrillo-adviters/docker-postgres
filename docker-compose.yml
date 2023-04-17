@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db_adama_desa:
+    container_name: db_adama_desa
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db_adama_desa
+    volumes:
+      - nps_data:/var/lib/postgresql/data
+
+volumes:
+  nps_data: {}
